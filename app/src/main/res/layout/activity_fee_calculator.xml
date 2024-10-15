@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@color/floralWhite">
+    android:background="@color/white">
 
     <CheckBox
         android:id="@+id/checkBoxLandscaping"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Landscaping (R1500)"
+        android:text="Landscaping : R1500"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="32dp" />
@@ -20,7 +20,7 @@
         android:id="@+id/checkBoxChildMinding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Child Minding (R750)"
+        android:text="Child Minding : R750"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxLandscaping"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp" />
@@ -29,7 +29,7 @@
         android:id="@+id/checkBoxGardenMaintenance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Garden Maintenance (R750)"
+        android:text="Garden Maintenance : R750"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxChildMinding"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp" />
@@ -38,7 +38,7 @@
         android:id="@+id/checkBoxFirstAid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="First Aid (R1500)"
+        android:text="First Aid : R1500"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxGardenMaintenance"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp" />
@@ -47,7 +47,7 @@
         android:id="@+id/checkBoxSewing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sewing (R1500)"
+        android:text="Sewing : R1500"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxFirstAid"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp" />
@@ -56,7 +56,7 @@
         android:id="@+id/checkBoxLifeSkills"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Life Skills (R1500)"
+        android:text="Life Skills : R1500"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxSewing"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp" />
@@ -65,12 +65,12 @@
         android:id="@+id/checkBoxCooking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cooking (R750)"
+        android:text="Cooking : R750"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxLifeSkills"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCalculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,7 +78,8 @@
         app:layout_constraintTop_toBottomOf="@+id/checkBoxCooking"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="32dp"
-        android:backgroundTint="@color/oliveDrab"/>/>
+        android:backgroundTint="@color/black"
+        app:cornerRadius="0dp"/>
 
     <TextView
         android:id="@+id/textTotalFees"
@@ -91,15 +92,37 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp" />
 
-    <Button
-        android:id="@+id/btnBackToHome"
+    <TextView
+        android:id="@+id/textPriceBeforeDiscount"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price Before Discount: R0"
+        app:layout_constraintTop_toBottomOf="@+id/textTotalFees"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textDiscountAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Discount Amount: R0"
+        app:layout_constraintTop_toBottomOf="@+id/textPriceBeforeDiscount"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBackToHome"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Back to Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textTotalFees"
-        android:backgroundTint="@color/oliveDrab"/>/>
+        app:layout_constraintTop_toBottomOf="@id/textDiscountAmount"
+        android:backgroundTint="@color/black"
+        app:cornerRadius="0dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

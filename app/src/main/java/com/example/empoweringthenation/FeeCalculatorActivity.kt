@@ -22,6 +22,8 @@ class FeeCalculatorActivity : AppCompatActivity() {
         val checkBoxCooking = findViewById<CheckBox>(R.id.checkBoxCooking)
         val btnCalculate = findViewById<Button>(R.id.btnCalculate)
         val totalFeesText = findViewById<TextView>(R.id.textTotalFees)
+        val priceBeforeDiscountText = findViewById<TextView>(R.id.textPriceBeforeDiscount)
+        val discountAmountText = findViewById<TextView>(R.id.textDiscountAmount)
 
         btnCalculate.setOnClickListener {
             var totalFees = 0
@@ -62,10 +64,14 @@ class FeeCalculatorActivity : AppCompatActivity() {
                 in 4..Int.MAX_VALUE -> 0.15
                 else -> 0.0
             }
-            totalFees -= (totalFees * discount).toInt()
+
+            val discountAmount = (totalFees * discount).toInt()
+            val finalFees = totalFees - discountAmount
 
 
-            totalFeesText.text = "Total Fees: R$totalFees"
+            totalFeesText.text = "Total Fees: R$finalFees"
+            priceBeforeDiscountText.text = "Price Before Discount: R$totalFees"
+            discountAmountText.text = "Discount Amount (${(discount * 100).toInt()}%): R$discountAmount"
         }
 
         val btnBackToHome = findViewById<Button>(R.id.btnBackToHome)
